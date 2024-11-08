@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import '@fileverse/ui/styles';
+import { EnsPagePrivyProvider } from "@/components/privy/ens-page-privy-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}><EnsPagePrivyProvider>{children}</EnsPagePrivyProvider></body>
     </html>
   );
 }
